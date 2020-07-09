@@ -9,7 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 
 @NgModule({
-  exports:[
+  exports: [
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,

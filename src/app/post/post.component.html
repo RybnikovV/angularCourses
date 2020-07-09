@@ -1,0 +1,13 @@
+<mat-card  #postViewChild>
+  <mat-card-title style="display: flex; justify-content: space-between">
+    {{post.title}}
+    <i class="material-icons" (click)="deleteCard()" style="cursor: pointer">delete_forever</i>
+  </mat-card-title>
+  <mat-card-content>
+    {{post.text}}
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button>mat-raised-button</button>
+  </mat-card-actions>
+</mat-card>

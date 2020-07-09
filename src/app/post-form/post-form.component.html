@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <input matInput placeholder="Ex. Pizza" value="Sushi" [(ngModel)]="title"  #Form>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="text"></textarea>
+</mat-form-field>
+<button mat-raised-button (click)="addPost()">add!</button>
+<button mat-raised-button (click)="focusOnForm()">focus on form</button>
