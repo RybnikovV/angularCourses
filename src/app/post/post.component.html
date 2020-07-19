@@ -1,4 +1,4 @@
-<mat-card  #postViewChild>
+<mat-card  #postViewChild appStyle [changeColorOnMouseEnter]="changeColorOnMouseEnter">
   <mat-card-title style="display: flex; justify-content: space-between">
     {{post.title}}
     <i class="material-icons" (click)="deleteCard()" style="cursor: pointer">delete_forever</i>

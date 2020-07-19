@@ -11,6 +11,7 @@ export class PostComponent implements OnInit, OnDestroy {
   @ContentChild('Content', {static: true}) postContentChild: ElementRef;
   @Output() onRemove = new EventEmitter<number>();
   // @ViewChild('postViewChild', {static: true}) postViewChild: ElementRef;
+  changeColorOnMouseEnter = true;
 
   @Input()
   post: Post;
@@ -23,6 +24,9 @@ export class PostComponent implements OnInit, OnDestroy {
   ngOnInit() {
     console.log(this.postContentChild.nativeElement);
     // console.log(this.postViewChild);
+    if ( this.post.id === 3 ) {
+      this.changeColorOnMouseEnter = false;
+    }
   }
   ngOnDestroy() {
     console.log('ngOnDestroy');

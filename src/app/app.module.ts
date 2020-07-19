@@ -12,6 +12,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { SharedModules } from './shared/shared.module';
 import { WatchScrollDirective } from './directives/watch-scroll.directive';
+import { StyleDirective } from './directives/style.directive';
+import { ExampleStructureDerDirective } from './directives/example-structure-der.directive';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { WatchScrollDirective } from './directives/watch-scroll.directive';
     PostFormComponent,
     SidebarComponent,
     WatchScrollDirective,
+    StyleDirective,
+    ExampleStructureDerDirective,
   ],
   imports: [
     BrowserModule,
