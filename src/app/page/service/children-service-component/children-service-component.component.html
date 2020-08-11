@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title style="display: flex; justify-content: space-between">
+    counterPostService in app-children-service-component
+    {{counterPostService.counter}}
+  </mat-card-title>
+  <mat-card-content>
+    <!--    {{post.text}}-->
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="counterPostService.increase()">+</button>
+    <button mat-raised-button (click)="counterPostService.decrease()">-</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-title style="display: flex; justify-content: space-between">
+    localCounterService in app-children-service-component
+    {{localCounterService.counter}}
+  </mat-card-title>
+  <mat-card-content>
+    <!--    {{post.text}}-->
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="localCounterService.increase()">+</button>
+    <button mat-raised-button (click)="localCounterService.decrease()">-</button>
+  </mat-card-actions>
+</mat-card>

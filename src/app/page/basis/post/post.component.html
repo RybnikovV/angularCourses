@@ -1,0 +1,17 @@
+<app-post-form
+  (onAddPost)="postService.addNewPost($event)">
+</app-post-form>
+
+<div>
+  <app-post-item
+    *ngFor="let post of postService.posts"
+    [post]="post"
+    (onRemove)="postService.deletePost($event)">
+    <div #Content>
+      <div *ngIf="post.text.length > 10; else postShort">Пост длинный</div>
+      <ng-template #postShort>
+        <div>Пост короткий</div>
+      </ng-template>
+    </div>
+  </app-post-item>
+</div>

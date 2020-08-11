@@ -1,13 +1,13 @@
 import {ChangeDetectionStrategy, Component, ContentChild, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Post} from '../app.component';
+import {Post} from '../../../services/post.service';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.styl'],
+  selector: 'app-post-item',
+  templateUrl: './post-item.component.html',
+  styleUrls: ['./post-item.component.styl'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostComponent implements OnInit, OnDestroy {
+export class PostItemComponent implements OnInit, OnDestroy {
   @ContentChild('Content', {static: true}) postContentChild: ElementRef;
   @Output() onRemove = new EventEmitter<number>();
   // @ViewChild('postViewChild', {static: true}) postViewChild: ElementRef;

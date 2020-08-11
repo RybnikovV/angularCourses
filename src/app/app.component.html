@@ -7,30 +7,16 @@
 
   <mat-sidenav mode="side" class="main-navigation" #matSidenav>
     <mat-nav-list role="list">
-      <a mat-list-item href="#">Item 1</a>
-      <a mat-list-item href="#">Item 2</a>
-      <a mat-list-item href="#">Item 3</a>
+      <a mat-list-item routerLink="" routerLinkActive="main-navigation_active">Start page</a>
+      <a mat-list-item routerLink="/basis" routerLinkActive="main-navigation_active"
+         [routerLinkActiveOptions]="{exact:true}">basis</a>
+      <a mat-list-item routerLink="/service" routerLinkActive="main-navigation_active">service</a>
+      <a mat-list-item href="#" routerLinkActive="main-navigation_active">Item 3</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content appWatchScroll (scrolled)="scrollEvent($event)" class="scroll_customization">
-    <app-post-form
-      (onAddPost)="addNewPost($event)">
-    </app-post-form>
-
-    <div>
-      <app-post
-        *ngFor="let post of posts"
-        [post]="post"
-        (onRemove)="deletePost($event)">
-        <div #Content>
-          <div *ngIf="post.text.length > 10; else postShort">Пост длинный</div>
-          <ng-template #postShort>
-            <div>Пост короткий</div>
-          </ng-template>
-        </div>
-      </app-post>
-    </div>
-
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
+
 </mat-sidenav-container>
