@@ -18,6 +18,10 @@ import { ExampleStructureDerDirective } from './directives/example-structure-der
 import { StartPageComponent } from './page/start-page/start-page.component';
 import { ServiceComponent } from './page/service/service.component';
 import { ChildrenServiceComponentComponent } from './page/service/children-service-component/children-service-component.component';
+import { PipeComponent } from './page/pipe/pipe.component';
+import { MultByPipe } from './pipes/mult-by.pipe';
+import { PostFilterComponent } from './page/basis/post-filter/post-filter.component';
+import { FilterPostPipe } from './pipes/filter-post.pipe';
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import { ChildrenServiceComponentComponent } from './page/service/children-servi
     StartPageComponent,
     ServiceComponent,
     ChildrenServiceComponentComponent,
+    PipeComponent,
+    MultByPipe,
+    PostFilterComponent,
+    FilterPostPipe,
   ],
   imports: [
     BrowserModule,

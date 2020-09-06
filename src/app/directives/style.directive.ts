@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, Renderer2, Input, HostBinding} from '@angular/core';
+import {Directive, ElementRef, HostListener, Renderer2, Input, HostBinding, TemplateRef, ViewContainerRef} from '@angular/core';
 
 interface activeStyle {
   color?: string;
@@ -18,6 +18,13 @@ export class StyleDirective {
     private el: ElementRef,
     private r: Renderer2
   ) {}
+
+  // для структурной директивы
+  // constructor(
+  //   private templateRef: TemplateRef<any>,
+  //   private viewContainerRef: ViewContainerRef
+  // ) {
+  // }
 
   takeRandomColor = () => {
     this.blockStyle.color = '#' + Math.floor(Math.random() * 16777215).toString(16);

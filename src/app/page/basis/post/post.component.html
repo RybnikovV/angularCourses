@@ -2,9 +2,11 @@
   (onAddPost)="postService.addNewPost($event)">
 </app-post-form>
 
+<app-post-filter (searchEvent)="searchEventHandler($event)"></app-post-filter>
+
 <div>
   <app-post-item
-    *ngFor="let post of postService.posts"
+    *ngFor="let post of postService.posts | filterPost:filterValue"
     [post]="post"
     (onRemove)="postService.deletePost($event)">
     <div #Content>

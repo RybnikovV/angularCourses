@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>My learn app.</span>
+  <a routerLink="" style="text-decoration: none; color: white;">My learn app.</a>
   <button mat-raised-button (click)="matSidenav.toggle()">Left menu toggle!</button>
 </mat-toolbar>
 
@@ -7,15 +7,16 @@
 
   <mat-sidenav mode="side" class="main-navigation" #matSidenav>
     <mat-nav-list role="list">
-      <a mat-list-item routerLink="" routerLinkActive="main-navigation_active">Start page</a>
+      <a mat-list-item routerLink="" routerLinkActive="main-navigation_active">start page</a>
       <a mat-list-item routerLink="/basis" routerLinkActive="main-navigation_active"
          [routerLinkActiveOptions]="{exact:true}">basis</a>
       <a mat-list-item routerLink="/service" routerLinkActive="main-navigation_active">service</a>
-      <a mat-list-item href="#" routerLinkActive="main-navigation_active">Item 3</a>
+      <a mat-list-item routerLink="/pipe" routerLinkActive="main-navigation_active">pipe</a>
+      <a mat-list-item href="#" routerLinkActive="main-navigation_active">view redirect</a>
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content appWatchScroll (scrolled)="scrollEvent($event)" class="scroll_customization">
+  <mat-sidenav-content appWatchScroll (scrolled)="scrollEvent($event)" class="scroll_customization" style="padding: 0 16px">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 

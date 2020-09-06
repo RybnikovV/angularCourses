@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ContentChild, Input, OnInit} from '@angular/core';
 import {PostService} from '../../../services/post.service';
 
 @Component({
@@ -6,11 +6,11 @@ import {PostService} from '../../../services/post.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.styl']
 })
-export class PostComponent implements OnInit {
-
+export class PostComponent {
+  filterValue = '';
   constructor(private postService: PostService) { }
 
-  ngOnInit() {
+  searchEventHandler(e) {
+    this.filterValue = e;
   }
-
 }

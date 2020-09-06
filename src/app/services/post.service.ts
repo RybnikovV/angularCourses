@@ -9,8 +9,13 @@ export interface Post {
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {posts: Post[] = [
+export class PostService {
+  posts: Post[] = [
     {
+      title: 'General text',
+      text: 'Secondary text!',
+      id: 1,
+    }, {
       title: 'Title1',
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, reprehenderit!',
       id: 1,
