@@ -1,0 +1,95 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Angular Forms</h1>
+
+    <div style="margin-bottom: 30px;">
+      <label>Email</label>
+      <div>
+        form.get('email').invalid - <span style="color:red">{{form.get('email').invalid}}</span>
+      </div>
+      <div>
+        form.get('email').touched - <span style="color:red">{{form.get('email').touched}}</span>
+      </div>
+      <div>
+        form.get('email').errors | json - <span style="color: red;">{{form.get('email').errors | json}}</span>
+      </div>
+
+      <input type="email" placeholder="Email" formControlName="email">
+
+      <div *ngIf="form.get('email').invalid && form.get('email').touched"
+            class="validation">
+        <small *ngIf="form.get('email').errors.required">
+          Поле email пустое
+        </small>
+        <small *ngIf="form.get('email').errors.email">
+          Введите коррекнтый email
+        </small>
+        <small *ngIf="form.get('email').errors.restrictedEmails">
+          Email {{form.get('email').value}} запрещен
+        </small>
+      </div>
+    </div>
+
+    <div>
+      <label>Пароль</label>
+      <div>
+        form.get('password').errors | json -
+        <span style="color:red">{{form.get('password').errors | json}}</span>
+      </div>
+      <input type="password" placeholder="Пароль" formControlName="password">
+      <div *ngIf="form.get('password').invalid && form.get('password').touched">
+        <small *ngIf="form.get('password').errors.required">
+          Поле обязательное.
+        </small>
+        <small *ngIf="form.get('password').errors.minlength">
+          Минимальная длина - {{form.get('password').errors.minlength.requiredLength}},
+          текущая - {{form.get('password').errors.minlength.actualLength}}.
+        </small>
+      </div>
+    </div>
+
+    <div formGroupName="address">
+      <h2>Адрес</h2>
+      <div>
+        <label>Страна</label>
+
+        <select formControlName="country">
+          <option value="ru">Россия</option>
+          <option value="ua">Украина</option>
+          <option value="by">Беларусь</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="text" formControlName="city" placeholder="Ваш город">
+        <div *ngIf="form.get('address').get('city').touched && form.get('address').get('city').invalid">
+          <small style="color:red">Поле является обязательным</small>
+        </div>
+        <div>form.get('address').get('city').invalid | json} - {{form.get('address').get('city').invalid | json}}</div>
+      </div>
+
+      <button type="button" (click)="setCapital()">Выбрать столицу</button>
+    </div>
+
+    <div formArrayName="skills">
+      <h2>Ваши навыки</h2>
+      <button type="button" (click)="addSkill()">Добавить умение</button>
+
+      <div *ngFor="let control of form.get('skills').controls; let idx = index">
+        <label>Умение {{idx + 1}}</label>
+        <input type="text" [formControlName]="idx">
+        <button type="button" (click)="removeSkill(idx)">Удалить умение</button>
+        <small style="color: red;" *ngIf="control.invalid && control.touched">
+          Умение не может быть пустым
+        </small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Отправить</button>
+    <button type="reset" (click)="resetForm()">Очистить</button>
+
+  </form>
+</div>
+
+
+

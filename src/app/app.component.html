@@ -1,6 +1,6 @@
 <mat-toolbar>
-  <a routerLink="" style="text-decoration: none; color: white;">My learn app.</a>
   <button mat-raised-button (click)="matSidenav.toggle()">Left menu toggle!</button>
+  <a routerLink="" style="text-decoration: none; color: white;">My learn app.</a>
 </mat-toolbar>
 
 <mat-sidenav-container [ngStyle]="{ 'height': 'calc(100vh - 64px)'}">
@@ -12,6 +12,7 @@
          [routerLinkActiveOptions]="{exact:true}">basis</a>
       <a mat-list-item routerLink="/service" routerLinkActive="main-navigation_active">service</a>
       <a mat-list-item routerLink="/pipe" routerLinkActive="main-navigation_active">pipe</a>
+      <a mat-list-item routerLink="/form" routerLinkActive="main-navigation_active">form</a>
       <a mat-list-item href="#" routerLinkActive="main-navigation_active">view redirect</a>
     </mat-nav-list>
   </mat-sidenav>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './navigation/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -22,6 +22,7 @@ import { PipeComponent } from './page/pipe/pipe.component';
 import { MultByPipe } from './pipes/mult-by.pipe';
 import { PostFilterComponent } from './page/basis/post-filter/post-filter.component';
 import { FilterPostPipe } from './pipes/filter-post.pipe';
+import { FormComponent } from './page/form/form.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { FilterPostPipe } from './pipes/filter-post.pipe';
     MultByPipe,
     PostFilterComponent,
     FilterPostPipe,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { FilterPostPipe } from './pipes/filter-post.pipe';
     BrowserAnimationsModule,
     FormsModule,
     SharedModules,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })
